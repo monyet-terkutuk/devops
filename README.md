@@ -479,6 +479,12 @@ A router is a physical or virtual appliance that passes information between two 
 
  Network Address Translation (NAT) is a process in which one or more local IP addresses are translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
 
+- - -
+
+- NAT adalah sebuah teknologi yang digunakan dalam jaringan komputer untuk mengubah atau menerjemahkan alamat IP dari satu bentuk ke bentuk lain saat data dikirim antara jaringan lokal dan jaringan luar, seperti internet.
+
+- Konsep dasar dari NAT adalah mengubah alamat IP dari satu jaringan ke alamat IP yang berbeda ketika data akan dikirim ke jaringan lain.
+
 </b></details>
 
 <details>
@@ -489,6 +495,30 @@ A proxy server acts as a gateway between you and the internet. It’s an interme
 If you’re using a proxy server, internet traffic flows through the proxy server on its way to the address you requested. The request then comes back through that same proxy server (there are exceptions to this rule), and then the proxy server forwards the data received from the website to you.
 
 Proxy servers provide varying levels of functionality, security, and privacy depending on your use case, needs, or company policy.
+
+- - -
+
+- Proxy adalah perangkat lunak atau server yang bertindak sebagai perantara antara perangkat pengguna dengan internet.
+
+- Proxy menerima permintaan dari perangkat pengguna dan meneruskannya ke sumber daya atau server lain di internet.
+
+Cara kerja :
+1. Ketika perangkat pengguna membuat permintaan untuk mengakses sumber daya di internet (seperti situs web), permintaan tersebut dikirim ke proxy server.
+2. Proxy menerima permintaan tersebut dan meneruskannya ke sumber daya yang diminta di internet.
+3. Setelah sumber daya di internet menerima permintaan dari proxy, mereka mengirimkan balasan atau respon ke proxy.
+4. Proxy menerima respon tersebut dan meneruskannya kembali ke perangkat pengguna yang awalnya membuat permintaan. 
+5.  Proxy menerima respon tersebut dan meneruskannya kembali ke perangkat pengguna yang awalnya membuat permintaan. 
+
+Fungsi-fungsi utama dari penggunaan proxy meliputi:
+
+1. Anonimitas dan Privasi: Sebuah proxy dapat menyembunyikan alamat IP asli perangkat pengguna dari sumber daya di internet. Hal ini bisa membantu dalam menjaga privasi dan anonimitas saat menjelajahi web.
+
+2. Keamanan: Proxy dapat bertindak sebagai filter untuk lalu lintas web, memblokir atau memfilter akses ke situs-situs tertentu yang dianggap berbahaya atau tidak diinginkan.
+
+3. Optimasi Kinerja: Dalam beberapa kasus, penggunaan proxy dapat meningkatkan kecepatan akses ke situs web dengan caching (menyimpan sementara data yang sering diakses) atau kompresi data.
+
+4. Akses ke Konten Terbatas: Beberapa proxy dapat membantu dalam mengakses konten yang dibatasi geografis, seperti saat ingin mengakses konten yang hanya tersedia di negara tertentu.
+
 </b></details>
 
 <details>
@@ -501,6 +531,34 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 - A client node sends an SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
 - The target server must have open ports that can accept and initiate new connections. When the server receives the SYN packet from the client node, it responds and returns a confirmation receipt – the ACK packet or SYN/ACK packet.
 - The client node receives the SYN/ACK from the server and responds with an ACK packet.
+
+- - - 
+
+- TCP (Transmission Control Protocol) adalah protokol transport yang digunakan dalam suite protokol TCP/IP untuk menyediakan komunikasi yang handal dan terurut antara dua perangkat dalam jaringan komputer.
+
+- Protokol ini bertanggung jawab untuk memastikan bahwa data yang dikirimkan melalui jaringan sampai ke tujuannya tanpa kesalahan, dengan urutan yang benar, dan tanpa duplikasi.
+
+- Handshake 3-way adalah proses fundamental dalam TCP (Transmission Control Protocol) untuk membuka koneksi antara dua perangkat jaringan, biasanya antara klien (pengirim) dan server (penerima).
+
+- Ini merupakan metode yang digunakan untuk memulai dan menyinkronkan nomor urut (sequence numbers) agar kedua perangkat sepakat untuk memulai komunikasi.
+
+Cara Kerja TCP:
+
+Pembuatan Koneksi:
+- Proses dimulai dengan pembentukan koneksi antara pengirim dan penerima. Ini melibatkan proses yang disebut "3-way handshake."
+- SYN (Synchronize): Pengirim memulai koneksi dengan mengirimkan pesan SYN ke penerima. Pesan ini berisi nomor urut awal (sequence number) yang digunakan dalam proses transmisi.
+- SYN-ACK (Synchronize-Acknowledge): Penerima menerima pesan SYN dan merespons dengan mengirimkan pesan SYN-ACK sebagai konfirmasi bahwa pesan SYN diterima. Pesan ini juga berisi nomor urut yang baru dan nomor urut pengakuan (acknowledgment number).
+- ACK (Acknowledge): Pengirim menerima pesan SYN-ACK dan mengirimkan pesan ACK sebagai konfirmasi bahwa pesan SYN-ACK diterima. Dengan ini, koneksi berhasil dibuat dan komunikasi data dapat dimulai.
+
+Pengiriman Data:
+- Setelah koneksi terbentuk, data dikirim dalam segmen-segmen kecil. Setiap segmen memiliki nomor urut yang memungkinkan penerima untuk menyusunnya kembali dalam urutan yang benar.
+
+Acknowledgment dan Retransmisi:
+- Setelah penerima menerima segmen, penerima mengirimkan acknowledgment (ACK) kembali ke pengirim untuk mengonfirmasi bahwa segmen telah diterima.
+Jika pengirim tidak menerima ACK dalam waktu tertentu, pengirim akan mengirim ulang segmen tersebut untuk memastikan pengiriman yang andal.
+
+Penutupan Koneksi:
+- Setelah selesai, koneksi TCP ditutup. Ini dilakukan dengan proses yang disebut "4-way handshake" yang melibatkan pesan FIN (menandakan penutupan) dan acknowledgment dari masing-masing pihak untuk menyelesaikan koneksi.
 </b></details>
 
 <details>
@@ -508,7 +566,19 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 
 From [wikipedia](https://en.wikipedia.org/wiki/Round-trip_delay): "the length of time it takes for a signal to be sent plus the length of time it takes for an acknowledgment of that signal to be received"
 
+- - -
+
+- Round-trip delay atau round-trip time (RTT) adalah waktu yang dibutuhkan oleh sebuah paket data untuk pergi dari pengirim ke penerima, dan kembali ke pengirim sebagai respons atas konfirmasi penerimaan.
+
+- Proses RTT dimulai ketika pengirim mengirimkan paket data dan mencatat waktu saat pengiriman dilakukan.
+
+- Saat paket tiba di penerima, penerima mengonfirmasi penerimaannya dengan mengirimkan acknowledgment (ACK) atau respon kembali ke pengirim. Pengirim kemudian mencatat waktu saat menerima respon ini. RTT dihitung sebagai selisih antara waktu kedua catatan tersebut.
+
 Bonus question: what is the RTT of LAN?
+
+- RTT yang rendah dalam jaringan lokal disebabkan oleh jarak fisik yang pendek antara perangkat-perangkat yang terhubung dalam LAN. 
+
+- Karena jaraknya yang singkat, paket data dapat melakukan perjalanan dari pengirim ke penerima dan kembali dalam waktu yang sangat cepat.
 </b></details>
 
 <details>
@@ -525,6 +595,25 @@ SSL handshake is a process that establishes a secure connection between a client
 8. The server sends a Change Cipher Spec message, which notifies the client that the server is about to send a message encrypted with the new cipher spec.
 9. The server sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the client's public key.
 10. The client and server can now exchange application data.
+
+- - -
+
+- SSL adalah protokol keamanan yang digunakan untuk membuat koneksi aman antara server dan klien di internet.
+- Handshake SSL merupakan proses pertukaran informasi kunci enkripsi dan pengaturan parameter keamanan antara server dan klien untuk memulai sesi aman.
+
+cara kerja SSL handshake:
+
+1. Client Hello: Proses dimulai ketika klien (browser atau aplikasi) mengirimkan pesan "Client Hello" ke server saat hendak terhubung. Pesan ini berisi informasi tentang protokol yang didukung oleh klien, versi SSL/TLS, serta berbagai parameter kriptografi yang bisa digunakan.
+
+2. Server Hello: Setelah menerima pesan "Client Hello", server akan membalas dengan pesan "Server Hello". Pesan ini berisi informasi tentang protokol yang akan digunakan, versi SSL/TLS yang disepakati, dan parameter kriptografi yang akan diterapkan untuk koneksi tersebut.
+
+3. Certificate Exchange: Setelah itu, server akan mengirimkan sertifikat digitalnya kepada klien. Sertifikat ini berisi kunci publik yang digunakan untuk enkripsi data dan diotorisasi oleh otoritas sertifikat terpercaya (Certificate Authority). Klien akan memeriksa validitas sertifikat server untuk memastikan bahwa koneksi yang terjalin adalah ke server yang benar.
+
+4. Key Exchange: Klien akan menghasilkan "pre-master secret" yang akan digunakan bersama dengan informasi yang diterima sebelumnya untuk menghasilkan "master secret". Proses pertukaran kunci (key exchange) terjadi untuk mendapatkan kunci enkripsi simetris yang akan digunakan untuk enkripsi dan dekripsi data selama sesi aman.
+
+5. Finish: Terakhir, setelah kunci enkripsi disepakati, klien akan mengirimkan pesan "Finished" yang dienkripsi ke server. Server akan melakukan hal yang sama, mengirimkan pesan "Finished" yang dienkripsi kembali ke klien. Dengan demikian, keduanya bisa memastikan bahwa kunci enkripsi yang mereka gunakan telah disepakati dan sesi aman telah dimulai.
+
+
 </b></details>
 
 <details>
@@ -532,17 +621,60 @@ SSL handshake is a process that establishes a secure connection between a client
 
 TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between the client and server and doesn't handle package orders. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
 
+- - - 
+
+- udp tidak memiliki koneksi, jadi klo tcp/ip mengetahui status paket yg telah dikirim, berbanding terbalik dengan udp yg tidak mngetahui status dari paket yg telah dikirim (telah diterima,dikirim ulang dan status lainnya).
+
+- tcp adalah protokol andal, menjamin bahwa data akan di terima di tujuan dengan akurat dan dalam urutan yg tepat. Sedangkan udp tidak memberikan mekanisme keandalan. Paket yg di teima ti tujuan bisa tiba di luar urutan, ada yg terduplikat atau bahkan bisa hilang tanpa ada pemulihan.
+
+- TCP memiliki overhead header yang lebih tinggi karena informasi tambahan yang diperlukan untuk membentuk koneksi, pemeriksaan kesalahan, dan kontrol aliran. Sedangkan UDP Memiliki overhead header yang lebih rendah dibandingkan TCP karena tidak memiliki fitur seperti pengakuan, pengurutan, dan kontrol aliran.
+
+
 [Penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference) provides a good explanation.
 </b></details>
 
 <details>
 <summary>What TCP/IP protocols are you familiar with?</summary><br><b>
+
+- Internet Protocol (IP): Protokol yang bertanggung jawab atas pengalamatan dan pengiriman paket data antar komputer dalam jaringan. IP menyediakan alamat unik (alamat IP) untuk setiap perangkat dan menentukan cara paket data bergerak dari satu perangkat ke perangkat lain.
+
+- Transmission Control Protocol (TCP): Protokol yang memastikan pengiriman data yang andal dan terurut antara perangkat dalam jaringan. TCP memecah data menjadi paket-paket kecil, mengatur pengiriman, memastikan paket diterima dengan benar, dan melakukan retransmisi jika paket hilang atau rusak.
+
+- User Datagram Protocol (UDP): Protokol yang menawarkan pengiriman data tanpa koneksi dan tidak terjamin. UDP mengirimkan pesan dalam bentuk datagram tanpa melakukan pemeriksaan kesalahan atau retransmisi jika terjadi kerusakan atau kehilangan paket.
+
+- Internet Control Message Protocol (ICMP): Protokol yang digunakan untuk mengirim pesan kontrol dan laporan kesalahan dalam jaringan. ICMP memberikan informasi terkait kesehatan dan operasi jaringan, seperti pesan "ping" untuk mengukur koneksi ke perangkat lain atau pesan "TTL exceeded" jika paket terlalu lama berada dalam jaringan.
+
+- Address Resolution Protocol (ARP): Protokol yang digunakan untuk memetakan alamat IP ke alamat MAC (Media Access Control) pada jaringan lokal. ARP membantu perangkat menemukan alamat fisik perangkat lain dalam jaringan dengan menggunakan alamat IP.
+
+- Dynamic Host Configuration Protocol (DHCP): Protokol yang menyediakan konfigurasi otomatis untuk perangkat dalam jaringan, seperti pemberian alamat IP, subnet mask, gateway, dan informasi jaringan lainnya secara dinamis.
+
+- File Transfer Protocol (FTP): Protokol yang digunakan untuk mentransfer file antara komputer di jaringan. FTP memungkinkan pengguna untuk mengunggah atau mengunduh file ke atau dari server.
+
+- Simple Mail Transfer Protocol (SMTP): Protokol yang digunakan untuk mengirim dan menerima email di internet. SMTP mengatur pengiriman email dari klien email ke server email dan antar server email.
+
+
 </b></details>
 
 <details>
 <summary>Explain the "default gateway"</summary><br><b>
 
 A default gateway serves as an access point or IP router that a networked computer uses to send information to a computer in another network or the internet.
+
+- - -
+
+Default Gateway bertindak sebagai jembatan antara berbagai jaringan, memungkinkan perangkat dalam jaringan lokal untuk berkomunikasi dengan perangkat di jaringan lain atau internet.
+
+Ketika suatu perangkat (seperti komputer atau server) ingin berkomunikasi dengan perangkat lain yang berada di luar jaringan lokalnya, perangkat tersebut memeriksa tabel routingnya. Jika alamat IP tujuan tidak berada dalam jaringan lokal, perangkat tersebut mengirimkan paket data ke default gateway.
+
+- Mengarahkan Lalu Lintas: Default gateway bertanggung jawab dalam mengarahkan lalu lintas dari jaringan lokal ke jaringan remote. Ia berperan sebagai perantara untuk lalu lintas keluar, meneruskan paket data ke jaringan tujuan yang sesuai.
+
+- Konektivitas Jaringan: Ia memungkinkan perangkat dalam jaringan lokal untuk mengakses sumber daya yang berada di luar jaringan, seperti jaringan lain, internet, atau server remote.
+
+- Konfigurasi: Default gateway diatur dalam pengaturan jaringan perangkat secara manual atau otomatis (menggunakan DHCP). Biasanya diberikan alamat IP dalam subnet yang sama dengan perangkat dalam jaringan lokal.
+
+- Satu Default Gateway: Biasanya, sebuah jaringan memiliki satu default gateway untuk kesederhanaan dan efisiensi dalam pengalihan lalu lintas. Namun, dalam konfigurasi jaringan yang lebih kompleks, bisa ada beberapa gateway untuk pembagian beban atau keamanan redundansi.
+
+
 </b></details>
 
 <details>
@@ -551,6 +683,33 @@ A default gateway serves as an access point or IP router that a networked comput
 ARP stands for Address Resolution Protocol. When you try to ping an IP address on your local network, say 192.168.1.1, your system has to turn the IP address 192.168.1.1 into a MAC address. This involves using ARP to resolve the address, hence its name.
 
 Systems keep an ARP look-up table where they store information about what IP addresses are associated with what MAC addresses. When trying to send a packet to an IP address, the system will first consult this table to see if it already knows the MAC address. If there is a value cached, ARP is not used.
+
+- - - 
+
+ARP (Address Resolution Protocol) adalah protokol yang digunakan dalam jaringan komputer untuk memetakan alamat IP (Internet Protocol) ke alamat MAC (Media Access Control) dalam jaringan lokal. Protokol ini memungkinkan perangkat dalam jaringan untuk mengetahui alamat MAC dari perangkat lain yang terhubung di dalam jaringan yang sama.
+
+jadi intinya untuk mencari alamat mac
+
+- Tujuan ARP:
+
+Ketika sebuah perangkat ingin mengirim paket data ke perangkat lain di jaringan lokalnya, ia memerlukan alamat MAC dari perangkat tersebut untuk mengirimkan paket data ke alamat yang tepat.
+
+- Permintaan ARP (ARP Request):
+
+Ketika perangkat ingin mengirim paket ke alamat IP tujuan, tetapi tidak memiliki informasi mengenai alamat MAC, ia mengirimkan pesan broadcast ARP Request ke seluruh perangkat dalam jaringan lokal, bertanya "Siapa yang memiliki alamat IP ini? Saya butuh alamat MAC-nya."
+
+- Respon ARP (ARP Reply):
+
+Perangkat yang memiliki alamat IP yang diminta dalam ARP Request akan merespons dengan pesan ARP Reply. Pesan ini berisi alamat MAC dari perangkat tersebut, yang kemudian disimpan dalam tabel ARP (ARP cache) di perangkat pengirim untuk penggunaan selanjutnya.
+
+- Tabel ARP (ARP Cache):
+
+Setelah menerima respon dari perangkat yang diminta, perangkat pengirim menyimpan informasi alamat IP dan alamat MAC yang diperoleh dari ARP Reply dalam tabel ARP cache-nya. Tabel ini berfungsi sebagai referensi untuk mempercepat proses selanjutnya dan menghindari permintaan ARP yang berulang-ulang.
+
+- Penggunaan Informasi ARP:
+
+Setelah mendapatkan informasi yang diperlukan dari ARP Reply, perangkat pengirim menggunakan alamat MAC yang diperoleh untuk membungkus paket data yang akan dikirim. Paket data ini kemudian dikirimkan ke alamat MAC yang tepat di jaringan lokal.
+
 </b></details>
 
 <details>
@@ -560,6 +719,12 @@ Systems keep an ARP look-up table where they store information about what IP add
 - TTL is used to prevent packets from circulating indefinitely in the network, which can cause congestion and degrade network performance.
 - It also helps to prevent packets from being trapped in routing loops, where packets continuously travel between the same set of routers without ever reaching their destination.
 - In addition, TTL can be used to help detect and prevent IP spoofing attacks, where an attacker attempts to impersonate another device on the network by using a false or fake IP address. By limiting the number of hops that a packet can travel, TTL can help prevent packets from being routed to destinations that are not legitimate.
+
+- - -
+
+- TTL merupakan singkatan dari "Time to Live" atau "Waktu Hidup". TTL adalah sebuah parameter yang terdapat dalam header paket IP pada jaringan komputer
+
+- Fungsi utama dari TTL adalah untuk membatasi masa hidup atau umur suatu paket data di dalam jaringan, serta mencegah paket-paket tersebut beredar secara tak terbatas atau menyebabkan kepadatan (congestion) pada jaringan.
 </b></details>
 
 <details>
@@ -573,6 +738,19 @@ It stands for Dynamic Host Configuration Protocol and allocates IP addresses, su
 * The server sends an acknowledgment (DHCP ACK)
 
 Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
+
+- - - 
+
+- DHCP (Dynamic Host Configuration Protocol) adalah protokol jaringan yang digunakan untuk mengotomatisasi proses pemberian alamat IP dan konfigurasi jaringan lainnya kepada perangkat dalam sebuah jaringan komputer.
+
+Cara Kerja :
+1. Ketika sebuah perangkat (misalnya komputer atau ponsel) bergabung dengan jaringan atau booting, perangkat tersebut mengirimkan permintaan ke jaringan untuk memperoleh konfigurasi jaringan. yang di sebut dengan "DHCP Discover".
+
+2. DHCP server yang ada dalam jaringan menerima permintaan tersebut dan memberikan "penawaran" atau "DHCP Offer" ke perangkat yang meminta.
+
+3. Perangkat yang meminta DHCP menerima penawaran dari server dan memilih konfigurasi yang paling sesuai. Ini biasanya terjadi dengan proses pengiriman "DHCP Request" untuk mengonfirmasi penggunaan konfigurasi tertentu dari server DHCP.
+
+4. Setelah memilih konfigurasi yang ditawarkan, server DHCP mengonfirmasi penggunaan konfigurasi tersebut dengan mengirimkan "DHCP Acknowledgment" ke perangkat.
 </b></details>
 
 <details>
@@ -581,6 +759,20 @@ Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 It is possible to have two DHCP servers on the same network, however, it is not recommended, and it is important to configure them carefully to prevent conflicts and configuration problems.
 - When two DHCP servers are configured on the same network, there is a risk that both servers will assign IP addresses and other network configuration settings to the same device, which can cause conflicts and connectivity issues. Additionally, if the DHCP servers are configured with different network settings or options, devices on the network may receive conflicting or inconsistent configuration settings.
 - However, in some cases, it may be necessary to have two DHCP servers on the same network, such as in large networks where one DHCP server may not be able to handle all the requests. In such cases, DHCP servers can be configured to serve different IP address ranges or different subnets, so they do not interfere with each other.
+
+- - -
+
+Bisa jasa memiliki dua server DHCP (Dynamic Host Configuration Protocol) yang beroperasi dalam satu jaringan. Tetapi, penggunaan dua server DHCP dalam satu jaringan memerlukan perencanaan yang cermat agar tidak terjadi konflik dan untuk memastikan penugasan alamat IP serta konfigurasi jaringan yang tepat kepada perangkat di dalam jaringan.
+
+Ini cara kerjanya jika ingin memiliki 2 sserver dhcp:
+
+- Memiliki dua server DHCP dapat memberikan redundansi dan pembagian beban kerja.
+- Untuk menghindari konflik, penting untuk mengonfigurasi server DHCP dengan benar. Hal ini sering melibatkan memastikan bahwa setiap server DHCP memiliki rentang alamat IP yang terpisah untuk ditugaskan. Rentang alamat IP yang tumpang tindih antara server DHCP dapat menyebabkan konflik, di mana dua server bisa menugaskan alamat IP yang sama kepada perangkat yang berbeda.
+- Setiap server DHCP harus memiliki cakupan (scope) sendiri, yang menentukan rentang alamat IP, subnet mask, alamat gateway, server DNS, durasi sewa (lease duration), dan konfigurasi jaringan lainnya yang dapat ditugaskan. Mengonfigurasi rentang alamat IP yang tidak tumpang tindih pada masing-masing scope server DHCP membantu mencegah konflik.
+- Penting untuk memberikan prioritas pada server DHCP dalam jaringan. Mengonfigurasi satu server DHCP dengan prioritas lebih tinggi memastikan bahwa server tersebut merespons permintaan DHCP terlebih dahulu. 
+- Server DHCP harus memastikan bahwa tidak terjadi konflik dengan menugaskan alamat IP yang sama. Mereka perlu mengetahui alamat IP yang sudah ditugaskan ke perangkat. 
+-Mengimplementasikan beberapa server DHCP memerlukan perencanaan, pemantauan, dan pemeliharaan yang teliti. 
+
 </b></details>
 
 <details>
@@ -594,6 +786,22 @@ Here's how SSL tunneling works:
 2. Once the SSL session is established, the client and server negotiate encryption parameters, such as the encryption algorithm and key length, then exchange digital certificates to authenticate each other.
 3. The client then sends traffic through the SSL tunnel to the server, which decrypts the traffic and forwards it to its destination.
 4. The server sends traffic back through the SSL tunnel to the client, which decrypts the traffic and forwards it to the application.
+
+- - - 
+
+SSL tunneling merupakan proses penggunaan protokol SSL (Secure Sockets Layer) atau TLS (Transport Layer Security) untuk mengamankan dan menyembunyikan lalu lintas data yang dikirimkan antara dua titik akhir melalui suatu jalur komunikasi. 
+
+Cara kerja SSL tunneling :
+
+1. SSL tunneling dimulai dengan proses inisiasi koneksi SSL/TLS antara dua titik akhir (seperti server dan klien). Ini melibatkan pertukaran sertifikat digital, negosiasi versi protokol, serta pembentukan kunci enkripsi untuk menyandikan data.
+
+2. Setelah koneksi SSL/TLS berhasil dibuat, "tunnel" aman dibentuk di dalam koneksi tersebut. Ini berfungsi sebagai saluran terenkripsi di mana data sensitif dapat dialirkan melalui jaringan yang tidak aman.
+
+3. Data yang hendak dikirimkan dari titik awal ke titik tujuan dikemas atau dienkripsi menggunakan protokol SSL/TLS. Ini berarti data yang dilewatkan dari satu titik ke titik lainnya di dalam "tunnel" akan terlindungi dari pengintaian atau manipulasi oleh pihak yang tidak berwenang.
+
+4. Data yang sudah dienkripsi kemudian dikirimkan melalui "tunnel" aman. Ini memungkinkan data tersebut melewati jaringan yang tidak terlindungi secara aman tanpa risiko terpapar atau diretas oleh pihak yang tidak sah.
+
+5. Ketika data mencapai titik tujuan, data tersebut akan didekripsi dan diproses. Titik tujuan yang sah memiliki kemampuan untuk mendekripsi data yang tiba dan mengonversinya kembali menjadi bentuk semula sehingga dapat digunakan sesuai kebutuhan.
 </b></details>
 
 <details>
@@ -602,6 +810,16 @@ Here's how SSL tunneling works:
 - A socket is a software endpoint that enables two-way communication between processes over a network. Sockets provide a standardized interface for network communication, allowing applications to send and receive data across a network. To view the list of open sockets on a Linux system: 
 ***netstat -an***
 - This command displays a list of all open sockets, along with their protocol, local address, foreign address, and state.
+
+- - -
+Socket adalah antarmuka yang memungkinkan program komputer untuk berkomunikasi dengan jaringan melalui protokol tertentu. Socket digunakan untuk mengirim dan menerima data antara dua komputer atau perangkat yang terhubung dalam jaringan. 
+
+- Windows
+***netstat -tuln***
+
+- Linux
+***netstat -an***
+
 </b></details>
 
 <details>
@@ -616,18 +834,47 @@ There are several reasons why we should consider using IPv6 over IPv4:
 3. Performance: IPv6 includes features that can help to improve network performance, such as multicast routing, which allows a single packet to be sent to multiple destinations simultaneously.
 4. Simplified network configuration: IPv6 includes features that can simplify network configuration, such as stateless autoconfiguration, which allows devices to automatically configure their own IPv6 addresses without the need for a DHCP server.
 5. Better mobility support: IPv6 includes features that can improve mobility support, such as Mobile IPv6, which allows devices to maintain their IPv6 addresses as they move between different networks.
+
+- - -
+
+IPv6 adalah standar protokol internet generasi berikutnya yang dirancang untuk menggantikan IPv4 (Internet Protocol version 4), yang saat ini merupakan standar dominan yang digunakan dalam infrastruktur internet. IPv6 menyediakan alamat IP yang lebih banyak dan memperkenalkan beberapa perubahan penting dibandingkan dengan IPv4.
+
+kenapa lebih baik mengguakan ip6 dibanding adalah karena :
+1. IPv4 memiliki keterbatasan dalam jumlah alamat IP yang tersedia. Dengan semakin banyaknya perangkat yang terhubung ke internet (misalnya, perangkat IoT, smartphone, dan perangkat lainnya), stok alamat IPv4 semakin menipis. IPv6 menawarkan ruang alamat yang jauh lebih luas, memungkinkan penciptaan miliaran alamat IP baru, sehingga dapat mengatasi kekurangan alamat IP IPv4.
+
+2. IPv6 menyertakan fitur keamanan yang lebih baik secara bawaan dibandingkan IPv4. Ini termasuk fitur otentikasi dan enkripsi yang memungkinkan keamanan lalu lintas data secara lebih efektif.
+
+3. Karena kemampuannya yang lebih besar dalam memberikan alamat IP, IPv6 mendukung pertumbuhan dan pengembangan layanan dan aplikasi masa depan, terutama dalam hal Internet of Things (IoT), cloud computing, dan teknologi yang membutuhkan lebih banyak alamat IP.
+
+4. IPv6 dirancang dengan struktur yang lebih efisien dan mendukung fitur-fitur jaringan yang lebih baik, seperti kemampuan pengaturan lalu lintas secara lebih cerdas dan pemecahan masalah yang terkait dengan alamat jaringan.
+
 </b></details>
 
 <details>
 <summary>What is VLAN?</summary><br><b>
 
 - A VLAN (Virtual Local Area Network) is a logical network that groups together a set of devices on a physical network, regardless of their physical location. VLANs are created by configuring network switches to assign a specific VLAN ID to frames sent by devices connected to a specific port or group of ports on the switch.
+
+- - - 
+
+
+- VLAN (Virtual Local Area Network) adalah sebuah metode yang memungkinkan jaringan lokal (LAN) untuk dibagi menjadi beberapa jaringan logis secara virtual, walaupun secara fisik berada dalam satu jaringan fisik yang sama. Dengan menggunakan VLAN, komputer-komputer atau perangkat yang terhubung dalam jaringan dapat dikelompokkan secara logis berdasarkan kebutuhan atau kriteria tertentu, tanpa memerlukan perubahan fisik pada infrastruktur jaringan.
+
+-  VLAN memisahkan jaringan fisik menjadi beberapa segmen jaringan logis, yang memungkinkan administrator jaringan untuk mengatur dan mengelola lalu lintas data dengan lebih efisien.
+
+
 </b></details>
 
 <details>
 <summary>What is MTU?</summary><br><b>
 	
 MTU stands for Maximum Transmission Unit. It's the size of the largest PDU (protocol Data Unit) that can be sent in a single transaction.
+
+- - -
+
+MTU (Maximum Transmission Unit) adalah ukuran maksimum dari paket data yang dapat dikirim melalui sebuah jaringan. Ini menentukan ukuran maksimum paket data yang bisa ditransmisikan dalam satu transaksi pada lapisan jaringan.
+
+
 </b></details>
 
 <details>
@@ -636,12 +883,20 @@ MTU stands for Maximum Transmission Unit. It's the size of the largest PDU (prot
 With the IPv4 protocol, the router can fragment the PDU and then send all the fragmented PDU through the transaction.
 	
 With IPv6 protocol, it issues an error to the user's computer.
+
+- - - 
+
+- Jika Anda mengirimkan paket data yang lebih besar dari ukuran MTU (Maximum Transmission Unit) dalam suatu jaringan, maka paket tersebut akan mengalami proses yang disebut "fragmentation" atau pemecahan paket.
 </b></details>
 
 <details>
 <summary>True or False? Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
 
 False. Ping is actually using ICMP (Internet Control Message Protocol) which is a network protocol used to send diagnostic messages and control messages related to network communication.
+
+- - -
+
+False, Karea Ping menggunakan protokol ICMP (Internet Control Message Protocol) bukan UDP (User Datagram Protocol).
 </b></details>
 
 <details>
@@ -649,6 +904,16 @@ False. Ping is actually using ICMP (Internet Control Message Protocol) which is 
 
 - SDN stands for Software-Defined Networking. It is an approach to network management that emphasizes the centralization of network control, enabling administrators to manage network behavior through a software abstraction.
 - In a traditional network, network devices such as routers, switches, and firewalls are configured and managed individually, using specialized software or command-line interfaces. In contrast, SDN separates the network control plane from the data plane, allowing administrators to manage network behavior through a centralized software controller.
+
+- - -  
+
+- SDN adalah singkatan dari Software-Defined Networking, sebuah konsep dalam teknologi jaringan yang memisahkan pengendalian (control) dari perangkat keras jaringan (hardware) dan mengelolanya melalui perangkat lunak (software).
+
+- Dalam SDN, pengontrol jaringan terpusat (seperti sebuah controller atau kontroler) digunakan untuk mengelola dan mengarahkan lalu lintas data melalui jaringan, sementara perangkat keras jaringan (switches, routers, dll.) bertindak sebagai komponen pasif yang mengikuti instruksi dari pengontrol sentral.
+
+- SDN memungkinkan inovasi yang lebih cepat dalam pengembangan aplikasi jaringan, mempermudah adaptasi terhadap perubahan kebutuhan, dan memberikan kemampuan yang lebih besar dalam menyesuaikan lalu lintas jaringan sesuai dengan kebutuhan aplikasi atau layanan tertentu. Dengan demikian, SDN telah menjadi salah satu pendekatan yang penting dalam evolusi teknologi jaringan modern.
+
+
 </b></details>
 
 <details>
@@ -662,6 +927,17 @@ ICMP messages are used for a variety of purposes, including:
 3. Path MTU discovery: ICMP is used to discover the Maximum Transmission Unit (MTU) of a path, which is the largest packet size that can be transmitted without fragmentation.
 4. Traceroute: ICMP is used by the traceroute utility to trace the path that packets take through the network.
 5. Router discovery: ICMP is used to discover the routers in a network.
+
+- - -
+
+ICMP (Internet Control Message Protocol) adalah protokol yang digunakan untuk mengirim pesan kontrol dan informasi di dalam jaringan komputer. Protokol ini terdapat dalam lapisan jaringan Internet Protocol (IP) dan berfungsi sebagai alat diagnostik dan kontrol yang penting untuk memantau dan mengelola kesehatan jaringan.
+
+Fingsi ICMP :
+- Salah satu fungsi paling dikenal dari ICMP adalah untuk melakukan perintah "ping". Ini digunakan untuk menguji koneksi jaringan antara dua perangkat. Perintah "ping" mengirim pesan ICMP Echo Request dari satu perangkat ke perangkat lainnya, dan perangkat tujuan akan merespons dengan pesan ICMP Echo Reply.
+
+- ICMP juga digunakan untuk mengirimkan pesan kesalahan (error messages) kepada pengirim data jika ada masalah dalam proses pengiriman data, seperti paket yang tidak dapat diantar atau jaringan yang tidak terjangkau.
+
+- ICMP memberikan informasi penting yang digunakan oleh perangkat jaringan untuk mengelola kesehatan jaringan, seperti informasi tentang keadaan dan kondisi jaringan, ketersediaan perangkat, dan lainnya.
 </b></details>
 
 <details>
@@ -669,6 +945,12 @@ ICMP messages are used for a variety of purposes, including:
 
 NAT stands for Network Address Translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
 For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to its public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
+
+- - - 
+
+- NAT (Network Address Translation) adalah sebuah teknologi dalam jaringan komputer yang digunakan untuk mengubah alamat IP (Internet Protocol) dari satu tipe alamat ke tipe lain saat data melewati sebuah router atau gateway jaringan.
+
+- Cara kerja NAT adalah dengan mengonversi alamat IP pada header paket data yang masuk dari jaringan lokal ke alamat IP publik yang digunakan di internet, dan sebaliknya saat paket data dari internet menuju jaringan lokal.
 </b></details>
 
 <details>
@@ -705,6 +987,29 @@ Several factors can affect network performance, including:
 6. Network protocol: Different network protocols have different performance characteristics, which can impact network performance. For example, TCP is a reliable protocol that can guarantee the delivery of data, but it can also result in slower performance due to the overhead required for error checking and retransmission.
 7. Network security: Security measures such as firewalls and encryption can impact network performance, especially if they require significant processing power or introduce additional latency.
 8. Distance: The physical distance between devices on a network can impact network performance, especially for wireless networks where signal strength and interference can affect connectivity and data transfer rates.
+
+- - -
+
+1. Bandwidth: Bandwidth adalah tingkat maksimum data yang dapat ditransmisikan melalui jaringan. Bandwidth yang lebih tinggi biasanya menghasilkan kinerja yang lebih baik dengan kemampuan mentransfer lebih banyak data dalam waktu tertentu.
+
+2. Latency: Latensi adalah waktu atau jeda yang dibutuhkan oleh data untuk melakukan perjalanan dari sumber ke tujuan. Latensi yang rendah berarti waktu tanggapan yang cepat dan kinerja yang lebih baik, terutama untuk aplikasi real-time seperti permainan daring atau konferensi video.
+
+3. Jitter: Jitter merujuk pada variasi latensi dari waktu ke waktu. Latensi yang konsisten dan dapat diprediksi diinginkan untuk transmisi data yang lancar. Jitter yang tinggi dapat menyebabkan kehilangan paket atau ketidaksesuaian dalam pengiriman data.
+
+4. Packet Loss: Packet Loss terjadi saat paket data hilang atau dibuang selama transmisi. Hal ini bisa terjadi karena kemacetan jaringan, masalah perangkat keras, atau kesalahan. Mengurangi Packet Loss penting untuk menjaga integritas data dan kinerja jaringan.
+
+5. Congestion: Congestion jaringan terjadi saat volume lalu lintas data melebihi kapasitas jaringan. Ini menyebabkan penundaan, peningkatan Packet Loss, dan penurunan kinerja. Manajemen lalu lintas yang efektif membantu mengurangi Congestion.
+
+6. Hardware and Infrastructure: Kualitas dan kemampuan perangkat keras jaringan, seperti router, switch, kabel, dan kartu antarmuka jaringan, secara langsung mempengaruhi kinerja. Meng-upgrade dan menjaga komponen-komponen ini dapat meningkatkan efisiensi jaringan.
+
+7. Software and Protocol Efficiency: Efisiensi protokol jaringan, aplikasi, dan perangkat lunak dapat mempengaruhi kinerja. Protokol yang dioptimalkan dan aplikasi yang dirancang dengan baik dapat meningkatkan transfer data dan responsivitas jaringan.
+
+8. Tingkat Keamanan: Meskipun penting, mekanisme keamanan seperti firewall, enkripsi, dan otentikasi dapat memperkenalkan beban pemrosesan tambahan, yang berpotensi memengaruhi kinerja jaringan.
+
+9. Quality of Service (QoS) Settings: Mengonfigurasi pengaturan QoS untuk memberikan prioritas pada jenis lalu lintas tertentu dapat meningkatkan kinerja untuk aplikasi yang penting dengan memastikan mereka mendapatkan sumber daya jaringan yang cukup.
+
+10. Topologi Jaringan: Desain dan arsitektur jaringan mempengaruhi aliran data antara perangkat. Topologi yang dirancang dengan baik dapat meminimalkan bottleneck dan mengoptimalkan kinerja.
+
 </b></details>
 
 <details>
@@ -713,12 +1018,20 @@ Several factors can affect network performance, including:
 APIPA is a set of IP addresses that devices are allocated
 when the main DHCP server is not reachable
 
+- - -
+
+APIPA (Automatic Private IP Addressing) adalah fitur pada sistem operasi Windows yang secara otomatis menetapkan alamat IP pada jaringan lokal jika komputer tidak dapat terhubung dengan server DHCP (Dynamic Host Configuration Protocol) untuk memperoleh alamat IP secara dinamis.
+
 </b></details>
 
 <details>
 <summary>What IP range does APIPA use?</summary><br><b>
 
 APIPA uses the IP range: 169.254.0.1 - 169.254.255.254.
+
+- - -
+
+Ketika komputer tidak menerima respons dari server DHCP, APIPA akan menghasilkan alamat IP secara otomatis untuk perangkat pada jaringan lokal, dalam rentang 169.254.0.1 hingga 169.254.255.254. Dengan APIPA, perangkat masih bisa terhubung ke jaringan lokal tanpa memerlukan konfigurasi manual alamat IP.
 
 </b></details>
 
@@ -728,18 +1041,30 @@ APIPA uses the IP range: 169.254.0.1 - 169.254.255.254.
 <summary>What does "control plane" refer to?</summary><br><b>
 
 The control plane is a part of the network that decides how to route and forward packets to a different location.
+
+- - - 
+
+"Control plane" mengacu pada bagian dari jaringan komputer yang bertanggung jawab atas pengaturan, pengelolaan, dan pertukaran informasi yang diperlukan untuk mengontrol aliran data di dalam jaringan. Ini adalah bagian inti dari arsitektur jaringan yang mengatur bagaimana perangkat dalam jaringan berkomunikasi satu sama lain dan bagaimana keputusan pengalihan lalu lintas diambil.
 </b></details>
 
 <details>
 <summary>What does "data plane" refer to?</summary><br><b>
 
 The data plane is a part of the network that actually forwards the data/packets.
+
+- - -
+
+"Data plane" mengacu pada bagian dari jaringan komputer yang menangani dan mengirimkan data secara aktif dari satu titik ke titik lain di dalam jaringan. Ini juga dikenal sebagai "forwarding plane" atau "forwarding path".
 </b></details>
 
 <details>
 <summary>What does "management plane" refer to?</summary><br><b>
 
 It refers to monitoring and management functions.
+
+- - -
+
+"Management plane" mengacu pada bagian dari jaringan komputer yang bertanggung jawab atas pengelolaan dan pengaturan perangkat serta sistem jaringan secara keseluruhan. Plane ini fokus pada fungsi administratif, konfigurasi, pemantauan, dan kontrol dari berbagai perangkat jaringan.
 </b></details>
 
 <details>
@@ -750,30 +1075,90 @@ Control Plane.
 
 <details>
 <summary>Explain Spanning Tree Protocol (STP).</summary><br><b>
+
+- Spanning Tree Protocol (STP) adalah protokol jaringan yang digunakan untuk mencegah terjadinya loop pada jaringan Ethernet. Di dalam jaringan Ethernet yang terhubung dengan banyak switch, seringkali terjadi loop karena adanya jalur-jalur aktif ganda antara switch-switch tersebut, yang dapat menyebabkan ketidakstabilan jaringan dan duplikasi paket data.
+
+- Fungsi utama dari STP adalah menciptakan topologi logis yang bebas dari loop dalam jaringan dengan menentukan jalur yang paling efisien dan memblokir link-link yang redundan untuk menghilangkan loop, sambil tetap mempertahankan jalur alternatif sebagai cadangan jika terjadi kegagalan pada link.
+
+Cara kerja STP :
+1. STP memilih root bridge (switch) berdasarkan Bridge ID (BID) yang terdiri dari nilai prioritas dan alamat MAC yang unik. Switch dengan nilai BID terendah menjadi root bridge.
+
+2. Setelah root bridge terpilih, setiap switch menentukan jalur terbaiknya ke root bridge. Port-port yang menyediakan jalur terbaik ke root bridge menjadi designated ports, sementara port lain ditempatkan dalam keadaan blocking untuk mencegah terjadinya loop.
+
+3. STP secara terus-menerus memantau jaringan untuk mendeteksi perubahan. Jika terdeteksi kegagalan link atau penambahan link baru, STP menghitung ulang topologi untuk menyesuaikan dan menemukan jalur baru tanpa loop. Proses ini melibatkan perubahan status port (blocking, listening, learning, forwarding) untuk menjaga topologi bebas dari loop.
+
 </b></details>
 
 <details>
 <summary>What is link aggregation? Why is it used?</summary><br><b>
+
+- Link Aggregation, juga dikenal sebagai EtherChannel, Port Trunking, atau Port Channel, adalah teknik yang menggabungkan beberapa koneksi fisik jaringan menjadi satu jalur logis yang lebih besar dan lebih kuat. Hal ini dilakukan untuk meningkatkan throughput, redundansi, dan ketersediaan dalam jaringan.
+
+- Link Aggregation digunakan untuk menggabungkan multiple link atau jalur fisik antara dua perangkat jaringan, seperti antara switch-switch, switch-server, atau router-switch. 
 </b></details>
 
 <details>
 <summary>What is Asymmetric Routing? How to deal with it?</summary><br><b>
+
+- Asymmetric Routing terjadi ketika lalu lintas data antara dua titik dalam jaringan mengikuti jalur yang berbeda dalam perjalanan ke arah dan dari arah yang sama. Artinya, paket data dari titik A ke titik B mengikuti jalur tertentu, sementara saat balik dari titik B ke titik A, paket data tersebut mengambil jalur yang berbeda.
+
+Cara-cara untuk menangani asimetri routing :
+1. Simpan State Routing: Pengaturan ini menyimpan status atau informasi tentang rute yang dilewati oleh paket, memungkinkan jaringan untuk memahami dan menyesuaikan diri dengan jalur balik yang berbeda.
+
+2. Pemilihan Rute Simetris: Dalam beberapa kasus, konfigurasi router atau firewall dapat disesuaikan untuk memilih rute yang simetris, memastikan bahwa paket pergi dan kembali menggunakan jalur yang sama.
+
+3. Pemahaman dan Pemantauan Jaringan: Penting untuk memahami konfigurasi dan pengaturan jaringan secara keseluruhan. Dengan memantau dan memeriksa jalur data secara teratur, Anda dapat mengidentifikasi asimetri routing dan mengambil langkah-langkah untuk menyesuaikan atau mengubah konfigurasi untuk mengatasinya.
 </b></details>
 
 <details>
 <summary>What overlay (tunnel) protocols are you familiar with?</summary><br><b>
+
+1. GRE (Generic Routing Encapsulation): GRE adalah protokol yang memungkinkan pembuatan jaringan pribadi virtual (VPN) di atas jaringan yang tidak memiliki dukungan langsung untuk itu. GRE memungkinkan pengiriman paket data melalui jaringan yang tidak sesuai dengan protokol aslinya dengan menyisipkan paket dalam header GRE.
+
+2. IPsec (Internet Protocol Security): IPsec adalah rangkaian protokol keamanan yang menyediakan keamanan dan privasi dalam komunikasi data di internet. Ini digunakan untuk membuat VPN dan melindungi lalu lintas data dengan enkripsi.
+
+3. L2TP (Layer 2 Tunneling Protocol): L2TP adalah protokol tunneling yang memungkinkan penciptaan jalur koneksi virtual di atas jaringan publik seperti internet. L2TP sendiri tidak memiliki fitur keamanan, sehingga sering dikombinasikan dengan protokol keamanan seperti IPsec untuk membuat VPN.
+
+4. VXLAN (Virtual Extensible LAN): VXLAN adalah protokol overlay yang digunakan untuk membuat jaringan virtual di atas jaringan yang ada. Ini memungkinkan perluasan jaringan data center dengan mengizinkan segmentasi jaringan yang lebih besar dan multi-tenancy.
+
+5. MPLS (Multiprotocol Label Switching): MPLS adalah teknologi jaringan yang menggunakan label untuk mengarahkan paket data melalui jaringan. Ini sering digunakan untuk membuat jaringan pribadi virtual (VPN) di dalam jaringan publik.
 </b></details>
 
 <details>
 <summary>What is GRE? How does it work?</summary><br><b>
+
+Generic Routing Encapsulation (GRE) adalah sebuah protokol tunneling yang digunakan untuk mengirimkan paket data melalui jaringan yang tidak mendukung protokol tertentu secara langsung. GRE menciptakan jaringan pribadi virtual (VPN) dengan menyisipkan atau mengkapsulkan paket data asli ke dalam header GRE, sehingga memungkinkan pengiriman paket tersebut melalui jaringan yang tidak dapat mengenali atau mendukung protokol aslinya.
+
+Cara kerja GRE :
+1. Pada pengirimannya, ketika paket data ingin dikirimkan melalui jaringan yang tidak mendukung protokolnya, paket tersebut dienkapsulasi atau disisipkan ke dalam header GRE. Ini dilakukan dengan menambahkan header GRE ke paket asli, dan menyertakan informasi tambahan seperti alamat tujuan, alamat pengirim, dan informasi routing.
+
+2. Setelah paket data dienkapsulasi, paket tersebut ditransmisikan melalui jaringan eksternal. Selama proses ini, router dan perangkat jaringan di jalan tidak perlu mengetahui atau mendukung protokol asli dari paket data karena paket tersebut berada dalam header GRE.
+
+3. Ketika paket data mencapai tujuannya, header GRE dihapus atau didekapsulasi, dan paket asli dipulihkan. Ini terjadi pada titik penerimaan data, di mana paket diidentifikasi kembali dan diekstrak dari header GRE sehingga dapat diolah oleh perangkat penerima.
+
 </b></details>
 
 <details>
 <summary>What is VXLAN? How does it work?</summary><br><b>
+
+VXLAN (Virtual Extensible LAN) adalah sebuah teknologi jaringan yang digunakan untuk membuat jaringan virtual di atas infrastruktur jaringan yang sudah ada. VXLAN dirancang untuk mengatasi batasan jumlah VLAN dalam lingkungan jaringan yang besar, memungkinkan segmentasi jaringan yang lebih besar dan multi-tenancy.
+
+Cara kerja VXLAN :
+1. VXLAN menyisipkan atau mengkapsulkan paket data ke dalam header VXLAN. Saat paket data dikirim, informasi tambahan seperti VXLAN header ditambahkan ke paket data asli. Header VXLAN ini berisi informasi tentang Virtual Network Identifier (VNI) yang membedakan dan mengidentifikasi jaringan virtual (VXLAN) yang berbeda.
+
+2. VXLAN menciptakan sebuah jaringan overlay atau lapisan atas di atas jaringan yang sudah ada (seperti jaringan IP). Ini memungkinkan komunikasi antara perangkat di dalam VXLAN, mengisolasi jaringan secara logis dan memperluas kemampuan segmentasi jaringan.
+
+3. Setelah dikapsulkan dalam header VXLAN, paket data dikirimkan melalui jaringan IP yang sudah ada. Karena VXLAN menggunakan IP sebagai transportnya, VXLAN dapat ditransmisikan melalui jaringan yang sudah ada tanpa memerlukan perubahan pada infrastruktur jaringan.
+
+4. Ketika paket data mencapai tujuannya, header VXLAN dihapus atau didekapsulasi, dan paket asli dipulihkan. Ini terjadi pada titik penerimaan data, di mana paket diidentifikasi kembali dan diekstrak dari header VXLAN.
 </b></details>
 
 <details>
 <summary>What is SNAT?</summary><br><b>
+
+SNAT (Source Network Address Translation) adalah teknik yang digunakan dalam jaringan komputer untuk mengubah atau memodifikasi alamat sumber (source address) dari paket data yang dikirim melalui jaringan.
+
+
 </b></details>
 
 <details>
@@ -789,24 +1174,43 @@ The OSPF 4 Types of routers are:
   * Backbone Routers
 
   Learn more about OSPF router types: https://www.educba.com/ospf-router-types/
+
+  - - -
+
+  OSPF (Open Shortest Path First) adalah sebuah protokol routing yang digunakan dalam jaringan komputer untuk menentukan jalur terpendek atau shortest path yang akan dilewati oleh paket data dari sumber ke tujuan. OSPF termasuk dalam kategori protokol routing interior (Interior Gateway Protocol/IGP) yang sering digunakan di dalam jaringan yang lebih besar.
+
+
 </b></details>
 
 <details>
 <summary>What is latency?</summary><br><b>
 	
 Latency is the time taken for information to reach its destination from the source.
+
+- - -
+
+Latensi adalah ukuran waktu yang diperlukan untuk suatu data atau informasi untuk melakukan perjalanan dari satu titik ke titik lain dalam jaringan. Secara sederhana, latency mengacu pada jeda waktu atau keterlambatan yang terjadi saat data dikirimkan dari sumber ke tujuan.
 </b></details>
 
 <details>
 <summary>What is bandwidth?</summary><br><b>
 	
 Bandwidth is the capacity of a communication channel to measure how much data the latter can handle over a specific time period. More bandwidth would imply more traffic handling and thus more data transfer.
+
+- - -
+
+Bandwidth merujuk pada kapasitas maksimum suatu jaringan untuk mentransfer data dalam suatu periode waktu tertentu. Secara umum, bandwidth mengukur seberapa banyak data yang bisa dikirim melalui jaringan dalam kurun waktu tertentu, sering kali diukur dalam bit per detik (bps), kilobit per detik (kbps), megabit per detik (Mbps), atau gigabit per detik (Gbps).
+
 </b></details>
 
 <details>
 <summary>What is throughput?</summary><br><b>
 	
 Throughput refers to the measurement of the real amount of data transferred over a certain period of time across any transmission channel.
+
+- - -
+
+Throughput adalah ukuran jumlah data yang berhasil ditransfer atau diproses melalui suatu jaringan, saluran komunikasi, atau sistem dalam jangka waktu tertentu. Istilah ini mengacu pada seberapa efisien suatu sistem dalam mengirim atau memproses data secara efektif, sering kali diukur dalam bit per detik (bps), kilobit per detik (kbps), megabit per detik (Mbps), atau gigabit per detik (Gbps).
 </b></details>
 
 <details>
@@ -814,22 +1218,38 @@ Throughput refers to the measurement of the real amount of data transferred over
 </summary><br><b>
 
 Latency. To have good latency, a search query should be forwarded to the closest data center.
+
+- - -
+
+Latency menjadi krusial dalam interaksi pengguna yang memerlukan respon cepat, seperti interaksi langsung atau respons instan terhadap permintaan. 
 </b></details>
 
 <details>
 <summary>When uploading a video, what is more important, latency or throughput? And how to assure that?</summary><br><b>
 
 Throughput. To have good throughput, the upload stream should be routed to an underutilized link.
+
+- - -
+
+Menurut saya lebih important throughput (thruput) lebih dari latency (keterlambatan). Meskipun keduanya memiliki peran, throughput menjadi lebih krusial karena proses mengunggah video melibatkan transfer data yang besar.
 </b></details>
 
 <details>
 <summary>What other considerations (except latency and throughput) are there when forwarding requests?</summary><br><b>
 
 * Keep caches updated (which means the request could be forwarded not to the closest data center)
+
 </b></details>
 
 <details>
 <summary>Explain Spine & Leaf</summary><br><b>
+
+
+Spine & Leaf adalah desain arsitektur jaringan yang digunakan untuk menyusun dan mengatur infrastruktur data center atau pusat data. Desain ini terdiri dari dua jenis switch utama: spine (tulang belakang) dan leaf (daun).
+
+- Spine (Tulang Belakang): Switch spine merupakan lapisan inti atau pusat dari arsitektur ini. Mereka terhubung langsung ke setiap switch leaf dan bertindak sebagai pusat lalu lintas jaringan. Switch spine memiliki kapasitas yang tinggi, memungkinkan lalu lintas data untuk dipindahkan antara leaf switch tanpa bottlenecks (hambatan).
+
+- Leaf (Daun): Switch leaf terhubung ke setiap switch spine dan perangkat atau server yang ada di data center. Mereka bertanggung jawab untuk menghubungkan perangkat ke jaringan dan meneruskan lalu lintas data dari dan ke switch spine. Leaf switch biasanya memiliki kapasitas yang cukup tinggi untuk menangani lalu lintas lokal antara perangkat-perangkat yang terhubung dengannya.
 </b></details>
 
 <details>
@@ -838,14 +1258,63 @@ Throughput. To have good throughput, the upload stream should be routed to an un
 Network congestion occurs when there is too much data to transmit on a network and it doesn't have enough capacity to handle the demand. </br>
 This can lead to increased latency and packet loss. The causes can be multiple, such as high network usage, large file transfers, malware, hardware issues, or network design problems. </br>
 To prevent network congestion, it's important to monitor your network usage and implement strategies to limit or manage the demand.
+
+- - -
+
+Kongesti jaringan terjadi ketika lalu lintas data yang melewati suatu bagian dari jaringan melebihi kapasitas yang bisa ditangani oleh bagian tersebut. Ini mengakibatkan penurunan kinerja, peningkatan keterlambatan (latency), atau bahkan kegagalan dalam pengiriman data.
+
+Penyebab kongesti jaringan :
+
+- Overutilization (Penggunaan Berlebihan): Jika banyak pengguna atau perangkat dalam jaringan menggunakan sumber daya secara bersamaan atau melakukan transfer data besar-besaran, hal ini dapat membebani jaringan melebihi kapasitasnya.
+
+- Bottlenecks (Hambatan): Terdapat area atau titik dalam jaringan yang memiliki kapasitas lebih rendah daripada bagian lainnya. Misalnya, koneksi yang lambat, switch yang kelebihan beban, atau jalur jaringan yang sempit dapat menjadi hambatan yang mengakibatkan kongesti.
+
+- Perangkat Gagal atau Overload: Kegagalan perangkat jaringan seperti switch atau router atau kelebihan beban pada perangkat tersebut juga dapat menyebabkan kongesti, karena lalu lintas tidak dapat teralihkan atau diproses dengan baik.
+
+- Serangan Jaringan (Network Attacks): Serangan seperti Distributed Denial of Service (DDoS) yang sengaja membanjiri jaringan dengan lalu lintas palsu dapat menyebabkan kongesti dan mengganggu layanan.
+
+- Kesalahan Konfigurasi atau Pengelolaan: Pengaturan yang tidak tepat, konfigurasi yang salah, atau pengelolaan yang buruk dari sisi administratif jaringan juga dapat memicu kongesti.
 </b></details>
 
 <details>
 <summary>What can you tell me about the UDP packet format? What about the TCP packet format? How is it different?</summary><br><b>
+
+- - -
+
+Format Paket UDP:
+
+- Source Port (16 bit): Menunjukkan nomor port pengirim.
+- Destination Port (16 bit): Menyatakan nomor port penerima.
+- Length (16 bit): Menunjukkan panjang total datagram UDP (header + data) dalam byte.
+- Checksum (16 bit): Digunakan untuk memeriksa kesalahan pada bidang header dan data.
+- Data: Payload atau data yang sebenarnya yang ditransmisikan.
+
+Format Paket TCP:
+
+- Source Port (16 bit): Menunjukkan nomor port pengirim.
+- Destination Port (16 bit): Menyatakan nomor port penerima.
+- Sequence Number (32 bit): Digunakan untuk mengurutkan segmen data.
+- Acknowledgment Number (32 bit): Mengakui penerimaan data hingga nomor urutan tertentu.
+- Data Offset (4 bit): Menunjukkan ukuran header TCP dalam kata-kata 32-bit.
+- Flag Kontrol (6 bit): Seperti SYN, ACK, PSH, RST, FIN yang digunakan untuk berbagai tujuan kontrol.
+- Window Size (16 bit): Menentukan ukuran jendela penerima yang digunakan untuk pengendalian aliran.
+- Checksum (16 bit): Digunakan untuk pemeriksaan kesalahan serupa dengan UDP.
+- Urgent Pointer (16 bit): Menunjukkan akhir data mendesak dalam segmen.
+- Opsi (Variabel): Opsi tambahan untuk TCP.
+- Data: Payload atau data yang sebenarnya yang ditransmisikan.
+
+
+Perbedaannya, UDP lebih cepat dan lebih ringan tetapi kurang andal dan tidak memiliki mekanisme koreksi kesalahan, sementara TCP lebih andal dan memastikan pengiriman yang terurut tetapi mungkin lebih lambat karena fungsionalitas tambahan dan overhead-nya.
 </b></details>
 
 <details>
 <summary>What is the exponential backoff algorithm? Where is it used?</summary><br><b>
+
+- Algoritma Exponential Backoff adalah sebuah metode dalam jaringan komputer yang digunakan untuk mengatasi kolisi pada protokol akses media bersama (seperti Ethernet) atau pada situasi di mana beberapa perangkat mencoba mengakses sumber daya jaringan yang sama pada saat yang bersamaan. 
+
+- Tujuan utama algoritma ini adalah untuk mengurangi kemungkinan terjadinya kolisi berulang dan meningkatkan efisiensi penggunaan sumber daya jaringan.
+
+Algoritma Exponential Backoff banyak digunakan dalam teknologi jaringan, terutama pada protokol seperti Ethernet yang menggunakan akses media bersama. 
 </b></details>
 
 <details>
@@ -871,6 +1340,22 @@ To prevent network congestion, it's important to monitor your network usage and 
 
 * Internet Protocol (IP) - assists in routing packets from one machine to another
 * Internet Control Message Protocol (ICMP) - lets one know what is going such as error messages and debugging information
+
+- - -
+
+Protokol yang ditemukan di Lapisan Jaringan (Layer 3 dari model OSI) bertanggung jawab untuk mengarahkan paket-paket data melintasi berbagai jaringan dan memastikan data mencapai tujuan yang dimaksud. 
+
+- Internet Protocol (IP): IP adalah protokol mendasar yang digunakan untuk mengirim paket-paket data melintasi jaringan. IP menyediakan fungsi alamat, fragmentasi, dan routing. IPv4 dan IPv6 adalah dua versi dari Internet Protocol yang banyak digunakan saat ini.
+
+- Internet Control Message Protocol (ICMP): ICMP digunakan untuk tujuan diagnostik dan kontrol dalam jaringan IP. Ini melaporkan kesalahan dan memberikan umpan balik tentang keberhasilan atau kegagalan pengiriman data. Ping dan traceroute adalah contoh utilitas yang menggunakan ICMP.
+
+- Routing Information Protocol (RIP): RIP adalah protokol routing dinamis yang digunakan dalam jaringan area lokal (LAN) dan jaringan yang lebih besar. Ini membantu router berbagi informasi tentang rute terbaik melalui suatu jaringan.
+
+- Open Shortest Path First (OSPF): OSPF adalah protokol routing dinamis lain yang digunakan dalam jaringan yang lebih besar. Protokol ini menentukan jalur terbaik untuk paket data berdasarkan algoritma jalur terpendek, sehingga memungkinkan routing yang efisien.
+
+- Border Gateway Protocol (BGP): BGP adalah protokol yang digunakan antara sistem otonom (AS) yang berbeda di internet. Ini menentukan rute terbaik untuk pengiriman data antara jaringan yang berbeda.
+
+- Internet Group Management Protocol (IGMP): IGMP digunakan oleh host IP dan router yang berdekatan untuk mengelola keanggotaan grup multicast dan berkomunikasi informasi grup multicast.
 </b></details>
 
 <details>
@@ -878,6 +1363,12 @@ To prevent network congestion, it's important to monitor your network usage and 
 HTTP Strict Transport Security is a web server directive that informs user agents and web browsers how to handle its connection through a response header sent at the very beginning and back to the browser. This forces connections over HTTPS encryption, disregarding any script's call to load any resource in that domain over HTTP.
 
 Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it#:~:text=HTTP%20Strict%20Transport%20Security%20(HSTS,and%20back%20to%20the%20browser.)
+
+- - -
+
+- HSTS adalah singkatan dari "HTTP Strict Transport Security". Ini adalah mekanisme keamanan web yang bertujuan untuk melindungi situs web dari jenis serangan tertentu yang terkait dengan kerentanan SSL/TLS.
+
+- HSTS berfungsis untuk memastikan koneksi yang aman antara server web dan browser pengguna dengan memaksa penggunaan HTTPS (HTTP di atas SSL/TLS). Ketika sebuah situs menerapkan HSTS, situs tersebut memberitahu browser untuk berkomunikasi hanya melalui koneksi HTTPS, bahkan jika pengguna mencoba mengakses situs tersebut menggunakan URL HTTP. 
 </b></details>
 
 #### Network - Misc
@@ -887,12 +1378,22 @@ Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-us
 
 The internet refers to a network of networks, transferring huge amounts of data around the globe.<br>
 The World Wide Web is an application running on millions of servers, on top of the internet, accessed through what is known as the web browser
+
+- - -
+
+- Internet adalah jaringan global yang menghubungkan jutaan perangkat di seluruh dunia. Sedangkan World Wide Web (WWW) adalah bagian dari Internet.
 </b></details>
 
 <details>
 <summary>What is the ISP?</summary><br><b>
 
 ISP (Internet Service Provider) is the local internet company provider.
+
+- - -
+
+- ISP adalah singkatan dari Penyedia Layanan Internet. Ini merupakan perusahaan atau organisasi yang menyediakan akses ke Internet dan layanan terkait kepada individu, bisnis, dan entitas lainnya.
+
+- ISP bertanggung jawab atas menyediakan kemampuan bagi pengguna untuk terhubung ke Internet, memungkinkan mereka untuk mengakses situs web, mengirim email, streaming video, mengunduh file, dan melakukan berbagai aktivitas online.
 </b></details>
 
 ## Operating System
